@@ -1,0 +1,91 @@
+@import "../../styles/var";
+
+
+.hero{
+  text-align: center;
+  padding: 40px 0;
+  :global{
+    .container{
+      max-width: 550px;
+      @include lg{
+        max-width: 1100px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+  h1{
+    margin-bottom: 30px;
+  }
+  button{
+    border: 0;
+    font-size: 0;
+    background: transparent;
+  }
+  picture{
+    display: flex;
+    align-items: center;
+  }
+}
+.col{
+  @include lg{
+    width: 47%;
+  }
+}
+#player {
+  height: 0;
+  padding-bottom: 56%;
+  position: relative;
+  @include lg {
+    padding-bottom: 27%;
+  }
+
+  iframe, picture {
+    max-height: 280px;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+.description{
+  margin-bottom: 16px;
+}
+.link{
+  display: block;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  color: $blue;
+  text-decoration: underline;
+}
+.iconYouTube{
+  position: relative;
+  &::after{
+    transition: .4s;
+    content: "";
+    position: absolute;
+    height: 40px;
+    width: 55px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 50%;
+    transform: translate(0, -50%);
+    //background-image: url(../images/icon-youTube.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    @include md{
+      height: 50px;
+      width: 70px;
+    }
+  }
+  &:hover{
+    &::after{
+      transform: translate(0, -50%) scale(1.3);
+    }
+  }
+}
